@@ -1,0 +1,21 @@
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+
+      {% for object in article.articleimage_set.all %}
+      <div class="swiper-slide">
+        <img src={{ object.photo.url }} />
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<div thumbsSlider="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for object in article.articleimage_set.all %}
+      <div class="swiper-slide">
+        <img src={{ object.photo.url }} />
+      </div>
+      {% endfor %}
+    </div>
+</div>

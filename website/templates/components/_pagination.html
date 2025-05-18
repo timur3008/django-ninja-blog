@@ -1,0 +1,50 @@
+{% if articles.has_other_pages %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center mt-5">
+      
+      {% if articles.has_previous %}
+      <li class="page-item">
+        {% if category_query %}
+        <a class="page-link" href="?category={{ category_query }}&page={{ articles.previous_page_number }}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+        {% else %}
+        <a class="page-link" href="?page={{ articles.previous_page_number }}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+        {% endif %}
+      </li>
+      {% endif %}
+      
+      {% for number in articles.paginator.page_range %}
+        {% if number == articles.number %}
+        <li class="page-item">
+          <a class="page-link active">{{ number }}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+          {% if category_query %}
+          <a class="page-link" href="?category={{ category_query }}&page={{ number }}">{{ number }}</a>
+          {% else %}
+          <a class="page-link" href="?page={{ number }}">{{ number }}</a>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+
+      {% if articles.has_next %}
+      <li class="page-item">
+        {% if category_query %}
+        <a class="page-link" href="?category={{ category_query }}&page={{ articles.next_page_number }}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+        {% else %}
+        <a class="page-link" href="?page={{ articles.next_page_number }}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+        {% endif %}
+      </li>
+      {% endif %}
+    </ul>
+</nav>
+{% endif %}
