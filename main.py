@@ -17,3 +17,4 @@
 # настройка профиля отправляющего изменения в репозиторий
 # git config user.name '<account_username>' - указываем username аккаунта который отправляет данные
 # git config user.email '<account_email>' - указываем email аккаунта который отправляет данные
+# git branch -M main - создаёт главную ветку 
