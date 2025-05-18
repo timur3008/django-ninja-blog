@@ -18,3 +18,4 @@
 # git config user.name '<account_username>' - указываем username аккаунта который отправляет данные
 # git config user.email '<account_email>' - указываем email аккаунта который отправляет данные
 # git branch -M main - создаёт главную ветку 
+# git remote add origin <https://github.com/timur3008/django-ninja-blog.git>
